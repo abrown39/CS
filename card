@@ -1,0 +1,116 @@
+public class Card
+{ 
+ // making the as and types public
+ public static int ACE = 1, JACK = 11, QUEEN = 12, KING = 13;
+ public static int SPADES = 1, CLUBS = 2, DIAMONDS = 3, HEARTS = 4; 
+ // making the rank and suit of the cards public
+ public int rank;
+ public int suit;
+ 
+ public Card(int b, int a)
+ {
+  // make sure they choose a possible a
+  if (a == 1)
+         {
+          suit = SPADES;
+         }
+  else if (a == 2)
+         {
+          suit = CLUBS;
+         }
+  else if (a == 3)
+         {
+          suit = DIAMONDS;
+         }
+  else if (a == 4)
+         {
+          suit = HEARTS;
+         }
+  // if the b is 1,11,12,13 choose appropriate things
+  if (b>0 && b<14)
+  {   if (b == 1)
+         {
+          rank = ACE;
+         }
+      else if (b == 11)
+         {
+          rank = JACK;
+         }
+      else if (b == 12)
+         {
+          rank = QUEEN;
+         }
+      else if (b == 13)
+         {
+          rank = KING;
+         }
+      else
+         {
+         rank = b;
+         }   
+  }
+}
+
+ // return suit
+ public int getSuit()
+   {
+   return suit;
+   }
+ // return rank
+ public int getRank()
+   {
+   return rank;
+   }
+   
+  //toString method
+ public String toString()
+   {
+    String currentRank;
+    String face;
+    
+     if (suit == SPADES)
+    {
+     face = "Spades";
+    }
+    else if (suit == DIAMONDS)
+    {
+     face = "Diamonds";
+    }
+    else if (suit == HEARTS)
+    {
+     face = "Hearts";
+    }
+    else
+    {
+     face = "Clubs";
+    }
+
+    
+    if (rank == ACE)
+    {
+     currentRank  = "Ace";
+    }
+    else if (rank == JACK)
+    {
+     currentRank  = "Jack";
+    }
+    else if (rank == QUEEN)
+    {
+     currentRank  = "Queen";
+    }
+    else if (rank == KING)
+    {
+     currentRank  = "King";
+    }
+    else 
+    {
+     currentRank = Integer.toString(rank);
+    }
+   
+    
+      
+
+    return (currentRank + " of " + face);
+   }  
+
+ }
